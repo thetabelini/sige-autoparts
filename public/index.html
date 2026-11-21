@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGE AutoParts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Tela de login -->
+  <section id="tela-login" class="login" hidden>
+    <form id="form-login" class="login-card">
+      <div class="marca marca-escura"><span class="logo">▣</span> SIGE AutoParts</div>
+      <p class="sub">Sistema Integrado de Gestão — Estoque, Vendas e Transporte</p>
+      <label>Usuário <input name="login" autocomplete="username" required></label>
+      <label>Senha <input name="senha" type="password" autocomplete="current-password" required></label>
+      <button class="btn primario" type="submit">Entrar</button>
+      <p id="erro-login" class="erro" role="alert"></p>
+    </form>
+  </section>
+
+  <!-- Aplicação -->
+  <div id="app" class="layout" hidden>
+    <aside class="lateral" id="lateral">
+      <div class="marca"><span class="logo">▣</span> SIGE AutoParts</div>
+      <nav id="menu"></nav>
+      <div class="usuario">
+        <span id="usuario-nome"></span>
+        <small id="usuario-perfil"></small>
+        <button class="btn link" id="sair">Sair</button>
+      </div>
+    </aside>
+    <main class="conteudo">
+      <header class="topo">
+        <button class="btn icone" id="abrir-menu" aria-label="Abrir menu">☰</button>
+        <h1 id="titulo"></h1>
+        <div id="acoes-topo"></div>
+      </header>
+      <div id="pagina"></div>
+    </main>
+  </div>
+
+  <dialog id="modal">
+    <form method="dialog" id="modal-form">
+      <header><h2 id="modal-titulo"></h2><button value="cancel" formnovalidate class="btn icone" aria-label="Fechar">×</button></header>
+      <div id="modal-corpo"></div>
+      <p id="modal-erro" class="erro" role="alert"></p>
+      <footer id="modal-rodape"></footer>
+    </form>
+  </dialog>
+  <div id="toast" role="status"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
