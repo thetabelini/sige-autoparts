@@ -67,11 +67,14 @@ npm test
 <li><a href="documentação/3-Modelagem-Processos-Negócio.md"> Modelagem dos Processos de Negócio</a></li>
 <li><a href="documentação/4-Projeto-Solucao.md"> Projeto da Solução</a></li>
 <li><a href="documentação/5-Planejamento-Projeto.md"> Planejamento do Projeto</a></li>
-<li><a href="documentação/6-Interface-Sistema.md"> Interface do Sistema</a></li>
+<li><a href="documentação/Metodologia.md"> Metodologia</a></li>
+<li><a href="documentação/6-Interface-Sistema.md"> Interface do Sistema (versão inicial do aplicativo)</a></li>
 <li><a href="documentação/7-Indicadores.md"> Indicadores de Desempenho</a></li>
 <li><a href="documentação/8-Conclusão.md"> Conclusão</a></li>
 <li><a href="documentação/9-Referências.md"> Referências</a></li>
 </ol>
+
+**Entrega atual (4ª etapa — 27/11):** [Metodologia](documentação/Metodologia.md) e versão inicial do aplicativo, tag [`v0.1.0`](https://github.com/thetabelini/sige-autoparts/releases/tag/v0.1.0) (código em [`código-fonte`](código-fonte)).
 
 Os documentos entregues em cada etapa (PDF/DOCX) estão em [`documentação/entregas`](documentação/entregas).
 
@@ -86,7 +89,7 @@ Os documentos entregues em cada etapa (PDF/DOCX) estão em [`documentação/entr
 ## Histórico de versões
 
 * 0.1.1
-    * CHANGE: Reorganização do repositório no template TI SIGE (pastas `código-fonte` e `documentação`). Código permaneceu inalterado, exceto pelo caminho do script SQL.
+    * CHANGE: Reorganização do repositório no template TI SIGE (pastas `código-fonte` e `documentação`) e inclusão da página de Metodologia. Código permaneceu inalterado, exceto pelo caminho do script SQL.
 * 0.1.0 (4ª etapa — 27/11)
     * Versão inicial do aplicativo: base de dados única, API REST, autenticação por perfil, módulos de Estoque, Vendas e Transporte, fluxo integrado e painel gerencial.
 * 0.0.1 (1ª a 3ª etapas)
