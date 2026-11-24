@@ -1,75 +1,50 @@
-# SIGE AutoParts
+# SIGE AutoParts: protótipo de um Sistema Integrado de Gestão Empresarial para empresas do ramo de peças automotivas
 
-**Protótipo de um Sistema Integrado de Gestão Empresarial para empresas do ramo de peças automotivas**
+`Bacharelado em Sistemas de Informação — PUC Minas (Contagem)`
 
-Trabalho Interdisciplinar — Sistemas Integrados de Gestão Empresarial (SIGE)
-Bacharelado em Sistemas de Informação — PUC Minas (Contagem) — 2º semestre de 2026
-Orientador: Prof. Dr. Paulo Isnard
+`Trabalho Interdisciplinar — Sistemas Integrados de Gestão Empresarial (SIGE)`
 
-## Integrantes
+`2º semestre de 2026`
 
-- Álefe de Almeida Sousa
-- Arthur Eduardo da Silva Marins
-- Felipe Tabelini Pena
-- Fernando Augusto Fabiano de Souza
-- Gabriel Hiury Pereira Bernardo
-- Igor Miranda Lio Santos
-- Igor Rodrigues Leão Bonfim
+O SIGE AutoParts é um protótipo de sistema integrado que reúne os processos de **Estoque**, **Vendas** e **Transporte** de uma empresa do ramo de peças automotivas em uma **base de dados única**. O objetivo é eliminar a redigitação de informações entre os setores, reduzir divergências entre o estoque registrado e o real e permitir que o andamento das entregas seja consultado diretamente por Vendas.
 
-## Sobre o projeto
-
-O SIGE AutoParts integra os processos de **Estoque**, **Vendas** e **Transporte** em uma **base de dados única**.
-Um pedido registrado em Vendas tem a disponibilidade verificada no Estoque, gera a baixa automática do saldo e
-uma ordem de entrega no Transporte; o status da entrega volta para Vendas sem redigitação.
+Um pedido registrado em Vendas tem a disponibilidade verificada no Estoque, gera a baixa automática do saldo e uma ordem de entrega no Transporte; o status da entrega volta para Vendas sem redigitação. Um painel gerencial apresenta indicadores calculados a partir dos registros dos três módulos.
 
 ```
 Pedido (Vendas) → Verificação (Estoque) → Baixa automática → Ordem de entrega (Transporte) → Status devolvido a Vendas
 ```
 
-## Entregas por etapa
+## Integrantes
 
-| Etapa | Data | Conteúdo | Onde está |
-|---|---|---|---|
-| 1ª | 28/08 | Tema, título e Introdução | `docs/` |
-| 2ª | 25/09 | Problemática, Justificativa, Objetivos, esboço do protótipo | `docs/` |
-| 3ª | 30/10 | Referencial teórico, protótipo e requisitos | `docs/etapa3/` |
-| **4ª** | **27/11** | **Metodologia + versão inicial do APP** | `docs/etapa4/` e código-fonte (`v0.1.0`) |
-| 5ª | 11/12 | Versão final do APP e apresentação | — |
+* Álefe de Almeida Sousa
+* Arthur Eduardo da Silva Marins
+* Felipe Tabelini Pena
+* Fernando Augusto Fabiano de Souza
+* Gabriel Hiury Pereira Bernardo
+* Igor Miranda Lio Santos
+* Igor Rodrigues Leão Bonfim
 
-## Arquitetura (em camadas)
+## Orientador
 
-```
-public/            Camada de apresentação  — SPA em HTML, CSS e JavaScript (responsiva)
-src/routes/        Camada de serviços      — API REST (Express) + autenticação por perfil
-src/services/      Regras de negócio       — integração Vendas → Estoque → Transporte (transações)
-src/database/      Camada de persistência  — SQLite, base única (schema.sql)
-tests/             Testes automatizados do fluxo integrado (node:test)
-docs/              Documentos acadêmicos de cada etapa
-```
+* Prof. Dr. Paulo Isnard
 
-## Tecnologias
+## Instruções de utilização
 
-- **Node.js 22.13+** (usa o módulo nativo `node:sqlite`)
-- **Express 4** para a API REST
-- **SQLite** como base de dados única
-- **HTML5, CSS3 e JavaScript** (sem framework) no front-end
-- **node:test** para testes automatizados
-- **Git + GitHub** para versionamento
-
-## Como executar
+Pré-requisito: **Node.js 22.13 ou superior** (o projeto usa o módulo nativo `node:sqlite`, sem necessidade de instalar um servidor de banco de dados).
 
 ```bash
 git clone https://github.com/thetabelini/sige-autoparts.git
-cd sige-autoparts
+cd sige-autoparts/código-fonte
 npm install
 npm start          # http://localhost:3000
 ```
 
-Na primeira execução o banco `data/sige.db` é criado com dados de demonstração. Para recomeçar do zero, apague a pasta `data/`.
+Na primeira execução o banco `código-fonte/data/sige.db` é criado a partir do script [`código-fonte/db/schema.sql`](código-fonte/db/schema.sql) e populado com dados de demonstração. Para recomeçar do zero, apague a pasta `código-fonte/data/`.
 
-Rodar os testes:
+Para rodar os testes automatizados:
 
 ```bash
+cd código-fonte
 npm test
 ```
 
@@ -84,48 +59,35 @@ npm test
 
 > Senhas de demonstração para ambiente acadêmico. São armazenadas com hash `scrypt` + salt (RNF02).
 
-## Situação dos requisitos na versão inicial (v0.1.0)
+# Documentação
 
-✅ implementado · ◐ parcial · ⏳ previsto para a versão final
+<ol>
+<li><a href="documentação/1-Contexto.md"> Documentação de Contexto</a></li>
+<li><a href="documentação/2-Especificação.md"> Especificação do Projeto</a></li>
+<li><a href="documentação/3-Modelagem-Processos-Negócio.md"> Modelagem dos Processos de Negócio</a></li>
+<li><a href="documentação/4-Projeto-Solucao.md"> Projeto da Solução</a></li>
+<li><a href="documentação/5-Planejamento-Projeto.md"> Planejamento do Projeto</a></li>
+<li><a href="documentação/6-Interface-Sistema.md"> Interface do Sistema</a></li>
+<li><a href="documentação/7-Indicadores.md"> Indicadores de Desempenho</a></li>
+<li><a href="documentação/8-Conclusão.md"> Conclusão</a></li>
+<li><a href="documentação/9-Referências.md"> Referências</a></li>
+</ol>
 
-| Código | Requisito | Situação |
-|---|---|---|
-| RF01 | Cadastrar, consultar, editar e excluir peças | ✅ |
-| RF02 | Cadastrar e consultar fornecedores | ◐ consulta e vínculo com a peça; cadastro na versão final |
-| RF03 | Registrar entradas e saídas de peças | ✅ |
-| RF04 | Consultar peças por código, descrição ou aplicação | ✅ |
-| RF05 | Identificar peças com estoque mínimo ou zerado | ✅ |
-| RF06 | Cadastrar, consultar e atualizar clientes | ✅ |
-| RF07 | Registrar e consultar pedidos de venda | ✅ |
-| RF08 | Verificar disponibilidade antes da confirmação | ✅ |
-| RF09 | Impedir confirmação acima do saldo | ✅ |
-| RF10 | Calcular automaticamente o total do pedido | ✅ |
-| RF11 | Acompanhar a situação dos pedidos | ✅ |
-| RF12 | Gerar ordem de entrega após confirmação | ✅ |
-| RF13 | Cadastrar e consultar rotas de entrega | ⏳ destino é preenchido pelo endereço do cliente |
-| RF14 | Atualizar e consultar a situação das entregas | ✅ |
-| RF15 | Atualizar estoque automaticamente após a venda | ✅ |
-| RF16 | Disponibilizar a situação da entrega em Vendas | ✅ |
-| RF17 | Autenticar usuários e restringir por perfil | ✅ |
-| RF18 | Painel gerencial com estoque, pedidos e entregas | ✅ |
-| RNF01–RNF04 | Segurança e integridade (perfis, hash, base única, transações) | ✅ |
-| RNF05 | Usabilidade | ◐ avaliação com usuários na versão final |
-| RNF06–RNF09 | Responsividade, compatibilidade, camadas, rastreabilidade | ✅ |
+Os documentos entregues em cada etapa (PDF/DOCX) estão em [`documentação/entregas`](documentação/entregas).
 
-## Endpoints principais da API
+# Código
 
-| Método | Rota | Descrição |
-|---|---|---|
-| POST | `/api/login` | Autenticação, retorna token |
-| GET | `/api/dashboard` | Indicadores do painel gerencial |
-| GET/POST/PUT/DELETE | `/api/pecas` | Peças (busca por `?busca=`) |
-| POST | `/api/pecas/:id/movimentacoes` | Entrada/saída de estoque |
-| GET/POST/PUT | `/api/clientes` | Clientes |
-| GET/POST | `/api/pedidos` | Pedidos (`confirmar: true` confirma na criação) |
-| POST | `/api/pedidos/:id/confirmar` | Verifica saldo, dá baixa e gera entrega |
-| GET | `/api/entregas` | Entregas |
-| PATCH | `/api/entregas/:id` | Avança status: Pendente → Em trânsito → Entregue |
+<li><a href="código-fonte/README.md"> Código Fonte</a></li>
 
-## Licença
+# Apresentação
 
-MIT — uso acadêmico.
+<li><a href="documentação/apresentação/README.md"> Apresentação da solução</a></li>
+
+## Histórico de versões
+
+* 0.1.1
+    * CHANGE: Reorganização do repositório no template TI SIGE (pastas `código-fonte` e `documentação`). Código permaneceu inalterado, exceto pelo caminho do script SQL.
+* 0.1.0 (4ª etapa — 27/11)
+    * Versão inicial do aplicativo: base de dados única, API REST, autenticação por perfil, módulos de Estoque, Vendas e Transporte, fluxo integrado e painel gerencial.
+* 0.0.1 (1ª a 3ª etapas)
+    * Introdução, problemática, justificativa, objetivos, referencial teórico, protótipo de telas e especificação de requisitos.

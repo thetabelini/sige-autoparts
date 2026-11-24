@@ -9,7 +9,7 @@ const DB_PATH = process.env.DB_PATH || path.join(__dirname, '..', '..', 'data', 
 function abrir(caminho = DB_PATH) {
   if (caminho !== ':memory:') fs.mkdirSync(path.dirname(caminho), { recursive: true });
   const db = new DatabaseSync(caminho);
-  db.exec(fs.readFileSync(path.join(__dirname, 'schema.sql'), 'utf8'));
+  db.exec(fs.readFileSync(path.join(__dirname, '..', '..', 'db', 'schema.sql'), 'utf8'));
   const { n } = db.prepare('SELECT COUNT(*) AS n FROM usuarios').get();
   if (n === 0) popular(db);
   return db;

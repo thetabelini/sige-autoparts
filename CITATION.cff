@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: Please cite this software using these metadata.
+title: "SIGE AutoParts: protótipo de um Sistema Integrado de Gestão Empresarial para empresas do ramo de peças automotivas"
+authors:
+  - family-names: Sousa
+    given-names: Álefe de Almeida
+  - family-names: Marins
+    given-names: Arthur Eduardo da Silva
+  - family-names: Pena
+    given-names: Felipe Tabelini
+  - family-names: Souza
+    given-names: Fernando Augusto Fabiano de
+  - family-names: Bernardo
+    given-names: Gabriel Hiury Pereira
+  - family-names: Santos
+    given-names: Igor Miranda Lio
+  - family-names: Bonfim
+    given-names: Igor Rodrigues Leão
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Isnard
+    given-names: Paulo
+keywords:
+  - SIGE
+  - ERP
+  - sistemas integrados
+  - peças automotivas
+  - estoque
+  - vendas
+  - transporte
+repository-code: "https://github.com/thetabelini/sige-autoparts"
+license: MIT
+version: 0.1.1

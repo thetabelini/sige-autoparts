@@ -1,5 +1,14 @@
+# IDEs
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Node / aplicação
 node_modules/
 data/
 *.db
+
+# Sistema / ambiente
 .DS_Store
 .env
